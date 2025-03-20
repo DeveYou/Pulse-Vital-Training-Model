@@ -1,18 +1,18 @@
 import csv
 import random
 
-# Set the number of rows you want
+# the number of rows
 num_rows = 2000
 
-# Define the CSV header
-header = ["blood pressure", "heart rate", "diabetes value", "age", "output"]
+# the CSV header
+header = ["blood pressure", "heart rate", "diabetes", "age", "output"]
 
 with open("synthetic_health_data.csv", "w", newline="") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(header)
     
     for _ in range(num_rows):
-        # Randomly choose a risk category with some weights
+        # choose a risk category with some weights
         risk = random.choices(["Low", "Medium", "High"], weights=[0.4, 0.35, 0.25])[0]
         
         if risk == "Low":
